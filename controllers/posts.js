@@ -129,10 +129,8 @@ const deletePost = async (req, res) => {
 
 const createComment = async (req, res) => {
   try {
-    req.body.owner = req.user.profile
+    req.body.commentator = req.user.profile
     const profile = await Profile.findById(req.user.profile)
-    req.body.avatar = profile.avatar
-    req.body.name = profile.name
     const post = await Post.findById(req.params.postId)
     post.comments.push(req.body)
     await post.save()
