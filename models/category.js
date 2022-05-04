@@ -1,18 +1,15 @@
 import mongoose from "mongoose";
 
-const { Schema } = mongoose;
+const Schema = mongoose.Schema;
 
 const categorySchema = new Schema(
   {
-    category: {
-      type: String,
-      required: true,
-    },
-    posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
+    category: { type: String, required: true, unique: true },
+    posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" },],
     avatar: {
-      type: String
+      type: String,
     },
-    admin: [{ type: Schema.Types.ObjectId, ref: "Profile" }]
+    admin: [{ type: mongoose.Schema.Types.ObjectId, ref: "Profile" },],
   },
   { timestamps: true }
 );
@@ -20,4 +17,3 @@ const categorySchema = new Schema(
 const Category = mongoose.model("Category", categorySchema);
 
 export { Category };
-

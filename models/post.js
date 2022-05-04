@@ -9,7 +9,7 @@ const commentSchema = new Schema(
       required: true,
     },
     commentator: { 
-      type: mongoose.Schema.Types.ObjectId, 
+      type: Schema.Types.ObjectId, 
       ref: "Profile" 
     },
     likeLevel: Number,
@@ -23,8 +23,8 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    bookmark: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
+    bookmark: { type: Schema.Types.ObjectId, ref: "Profile" },
+    owner: { type: Schema.Types.ObjectId, ref: "Profile" },
     media: {
       type: String
     },
@@ -33,7 +33,7 @@ const postSchema = new Schema(
       required: true,
     },
     likeLevel: Number,
-    category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
+    category: { type: Schema.Types.ObjectId, ref: "Category" },
     comments: [commentSchema],
     isAnonymous: Boolean
   },
