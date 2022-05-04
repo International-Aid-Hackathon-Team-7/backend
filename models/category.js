@@ -8,11 +8,11 @@ const categorySchema = new Schema(
       type: String,
       required: true,
     },
-    posts: { type: Schema.Types.ObjectId, ref: "Post" },
+    posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
     avatar: {
       type: String
     },
-    admin: { type: Schema.Types.ObjectId, ref: "Profile" }
+    admin: [{ type: Schema.Types.ObjectId, ref: "Profile" }]
   },
   { timestamps: true }
 );
