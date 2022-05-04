@@ -12,7 +12,7 @@ const categorySchema = new Schema(
     avatar: {
       type: String
     },
-    admin: { type: Schema.Types.ObjectId, ref: "Profile" }
+    admin: [{ type: Schema.Types.ObjectId, ref: "Profile" }]
   },
   { timestamps: true }
 );
