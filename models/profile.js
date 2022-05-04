@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 
 const profileSchema = new Schema(
   {
-    first_name: { type: String, required: true },
-    last_name: { type: String, required: true },
+    name: { type: String, required: true },
     avatar: { type: String },
     email: { type: String, required: true, lowercase: true, unique: true },
     posts: { type: Schema.Types.ObjectId, ref: "Post" },
