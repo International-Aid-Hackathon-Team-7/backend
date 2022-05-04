@@ -4,7 +4,7 @@ import { Post } from '../models/post.js'
 
 const indexCategory = async (req, res) => {
   try {
-    const categories = await Category.find({}).populate('members')
+    const categories = await Category.find({}).populate('posts')
     return res.status(200).json(categories)
     
   } catch(error) {
@@ -18,7 +18,7 @@ const createCategory = async (req, res) => {
     console.log('Enter try block')
     console.log('Owner:', req)
     req.body.owner = req.user.profile
-    req.body.members = req.user.profile
+    req.body.posts = req.user.profile
     req.body.admin = req.user.profile
     const newCategory = await new Category(req.body)
     await newCategory.save()
