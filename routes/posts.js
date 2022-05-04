@@ -6,6 +6,7 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 router.get('/', postCtrl.indexCategory)
+router.get('/posts', postCtrl.indexPost)
 router.get('/:id', postCtrl.showCategory)
 router.get('/:id/posts/:postId', postCtrl.showPost)
 

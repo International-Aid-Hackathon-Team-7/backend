@@ -12,6 +12,17 @@ const indexCategory = async (req, res) => {
   }
 }
 
+const indexPost = async (req, res) => {
+  try {
+    const posts = await Post.find({}).populate('category')
+    console.log(posts);
+    return res.status(200).json(posts)
+    
+  } catch(error) {
+    return res.status(500).json(error)
+  }
+}
+
 const createCategory = async (req, res) => {
   console.log('Create a new category')
   try {
@@ -59,10 +70,9 @@ const deleteCategory = async (req, res) => {
 }
 
 const createPost = async (req, res) => {
-
   try {
-
-    req.body.owner = req.user.profile
+    req.body.owner = req.user.profile;
+    req.body.category = req.params.id;
     const newPost = await new Post(req.body)
     await newPost.save()
     await Profile.updateOne(
@@ -166,4 +176,4 @@ const deleteComment = async (req, res) => {
   }
 }
 
-export { indexCategory, createCategory, updateCategory, deleteCategory, createPost, showCategory, showPost, updatePost, deletePost, createComment, updateComment, deleteComment }
+export { indexCategory, indexPost, createCategory, updateCategory, deleteCategory, createPost, showCategory, showPost, updatePost, deletePost, createComment, updateComment, deleteComment }
