@@ -14,7 +14,7 @@ const showProfile = async (req, res) => {
     const profile = await Profile.findById(req.params.id)
       .populate('posts')
       .populate('favorited_posts')
-    return res.status(200).json(category)
+    return res.status(200).json(profile)
   } catch (err) {
     return res.status(500).json(err)
   }
