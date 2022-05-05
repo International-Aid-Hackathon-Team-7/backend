@@ -4,8 +4,20 @@ import { Post } from '../models/post.js'
 
 const indexCategory = async (req, res) => {
   try {
-    const categories = await Category.find({}).populate('posts').populate('owner')
-    return res.status(200).json(categories)
+    const categories = await Category.find({}).populate({
+      path: 'posts',
+      populate: {
+        path: 'owner',
+        model: 'Profile'}
+    })
+    .exec(function(err, data){
+      if (err) return handleError(err);
+      res.json(data);
+  });
+    
+    
+    // .populate('posts').exec()
+    // return res.status(200).json(categories)
     
   } catch(error) {
     return res.status(500).json(error)
