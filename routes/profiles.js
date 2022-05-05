@@ -11,6 +11,6 @@ const router = Router()
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, profilesCtrl.index)
 router.get('/:id', checkAuth, profilesCtrl.showCategory)
-router.put('/:id', checkAuth, profileCtrl.updateCategory)
+router.put('/:id', checkAuth, profilesCtrl.updateCategory)
 
 export { router }
