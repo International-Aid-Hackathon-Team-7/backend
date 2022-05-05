@@ -23,10 +23,7 @@ const indexPost = async (req, res) => {
 }
 
 const createCategory = async (req, res) => {
-  console.log('Create a new category')
   try {
-    console.log('Enter try block')
-    console.log('Owner:', req)
     req.body.owner = req.user.profile
     req.body.posts = req.user.profile
     req.body.admin = req.user.profile
@@ -43,7 +40,6 @@ const createCategory = async (req, res) => {
 }
 
 const updateCategory = async (req, res) => {
-  console.log('Update Category!')
   try {
     const updatedCategory = await Category.findByIdAndUpdate(
       req.params.id,
