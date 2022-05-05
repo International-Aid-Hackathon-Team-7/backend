@@ -10,7 +10,7 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, profilesCtrl.index)
-router.get('/:id', checkAuth, profilesCtrl.showCategory)
-router.put('/:id', checkAuth, profilesCtrl.updateCategory)
+router.get('/:id', checkAuth, profilesCtrl.showProfile)
+router.put('/:id', checkAuth, profilesCtrl.updateProfile)
 
 export { router }
