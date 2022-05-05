@@ -14,7 +14,7 @@ const indexCategory = async (req, res) => {
 
 const indexPost = async (req, res) => {
   try {
-    const posts = await Post.find({}).populate('category')
+    const posts = await Post.find({}).populate('category').populate('owner')
     console.log(posts);
     return res.status(200).json(posts)
     
@@ -93,6 +93,7 @@ const showCategory = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id)
       .populate('posts')
+      .populate('owner')
     return res.status(200).json(category)
   } catch (err) {
     return res.status(500).json(err)
@@ -103,6 +104,7 @@ const showPost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.postId)
       .populate('comments')
+      .populate('name')
     return res.status(200).json(post)
   } catch (err) {
     return res.status(500).json(err)
