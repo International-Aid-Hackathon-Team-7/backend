@@ -15,7 +15,6 @@ const indexCategory = async (req, res) => {
 const indexPost = async (req, res) => {
   try {
     const posts = await Post.find({}).populate('category').populate('owner')
-    console.log(posts);
     return res.status(200).json(posts)
     
   } catch(error) {
