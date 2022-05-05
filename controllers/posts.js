@@ -4,7 +4,7 @@ import { Post } from '../models/post.js'
 
 const indexCategory = async (req, res) => {
   try {
-    const categories = await Category.find({}).populate('posts')
+    const categories = await Category.find({}).populate('posts').populate('owner')
     return res.status(200).json(categories)
     
   } catch(error) {
