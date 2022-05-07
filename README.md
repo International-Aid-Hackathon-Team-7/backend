@@ -26,6 +26,8 @@ https://www.canva.com/design/DAE_yhmnHvA/aYpFz8P9oHN6WfxKaH4j9Q/edit
 # Quetions? Interested in helping? Contact us!
 UX Team:  susanna.a.demartino@gmail.com / https://susannademartino.com / https://www.linkedin.com/in/susannademartino/
 
+UX Team: https://www.linkedin.com/in/marianna-hernandez / https://www.mariannahernandez.com/
+
 UX Team: paritanshah26@gmail.com / https://www.linkedin.com/in/parita-shah2/ / https://www.paritashah.com/
 
 
