@@ -23,7 +23,7 @@ https://www.canva.com/design/DAE_yhmnHvA/aYpFz8P9oHN6WfxKaH4j9Q/edit
 ## [ERD Link](https://whimsical.com/ga-hackathon-5UGXVGtszgK7TSQ6ahYpsM)
 
 
-# Quetions? Interested in helping? Contact us!
+# Questions? Interested in helping? Contact us!
 UX Team:  susanna.a.demartino@gmail.com / https://susannademartino.com / https://www.linkedin.com/in/susannademartino/
 
 UX Team: paritanshah26@gmail.com / https://www.linkedin.com/in/parita-shah2/ / https://www.paritashah.com/
