@@ -8,7 +8,12 @@ const indexCategory = async (req, res) => {
       path: 'posts',
       populate: {
         path: 'owner',
-        model: 'Profile'}
+        model: 'Profile'
+      },
+      populate: {
+        path: 'comments.commentator',
+        select: 'name'
+      }
     })
     .exec(function(err, data){
       if (err) return handleError(err);
@@ -26,7 +31,7 @@ const indexCategory = async (req, res) => {
 
 const indexPost = async (req, res) => {
   try {
-    const posts = await Post.find({}).populate('category').populate('owner')
+    const posts = await Post.find({}).populate('category').populate('owner').populate('comments.commentator', 'name')
     return res.status(200).json(posts)
     
   } catch(error) {
