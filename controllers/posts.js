@@ -6,14 +6,15 @@ const indexCategory = async (req, res) => {
   try {
     const categories = await Category.find({}).populate({
       path: 'posts',
-      populate: {
+      populate: [{
         path: 'owner',
-        model: 'Profile'
+        model: 'Profile',
+        select: 'name'
       },
-      populate: {
+      {
         path: 'comments.commentator',
         select: 'name'
-      }
+      }]
     })
     .exec(function(err, data){
       if (err) return handleError(err);
