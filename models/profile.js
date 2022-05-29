@@ -9,6 +9,7 @@ const profileSchema = new Schema(
     posts: [{ type: Schema.Types.ObjectId, ref: "Post" },],
     categories: [{ type: Schema.Types.ObjectId, ref: "Category" },],
     favorited_posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
+    favorited_comments: [{ type: Schema.Types.ObjectId}]
   },
   {
     timestamps: true,
