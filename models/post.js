@@ -13,6 +13,7 @@ const commentSchema = new Schema(
       ref: "Profile" 
     },
     likeLevel: Number,
+    favorited_by: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
   },
   { timestamps: true }
 );
@@ -33,6 +34,7 @@ const postSchema = new Schema(
       required: true,
     },
     likeLevel: Number,
+    favorited_by: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
     category: { type: Schema.Types.ObjectId, ref: "Category" },
     comments: [commentSchema],
     isAnonymous: Boolean
