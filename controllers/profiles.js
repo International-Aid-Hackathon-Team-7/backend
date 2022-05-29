@@ -23,7 +23,7 @@ const showProfile = async (req, res) => {
 const updateProfile = async (req, res) => {
   try {
     const updatedProfile = await Profile.findByIdAndUpdate(
-      req.params.postId,
+      req.params.profileId,
       req.body,
       { new: true }
       )
