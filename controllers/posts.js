@@ -172,6 +172,7 @@ const updateComment = async (req, res) => {
     const updatedComment = await post.comments.find((comment) => (comment._id.equals(req.params.commentId)))
     updatedComment.comment_content = req.body.comment_content
     updatedComment.likeLevel = req.body.likeLevel
+    updatedComment.favorited_by = req.body.favorited_by
     await post.save()
     return res.status(200).json(updatedComment)
   } catch(error) {
