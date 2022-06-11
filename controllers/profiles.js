@@ -1,3 +1,4 @@
+import { r } from 'tar'
 import { Profile } from '../models/profile.js'
 
 function index(req, res) {
@@ -23,7 +24,7 @@ const showProfile = async (req, res) => {
 const updateProfile = async (req, res) => {
   try {
     const updatedProfile = await Profile.findByIdAndUpdate(
-      req.params.profileId,
+      req.params.id,
       req.body,
       { new: true }
       )
